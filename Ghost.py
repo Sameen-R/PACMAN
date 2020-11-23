@@ -16,10 +16,10 @@ class Ghost(pygame.sprite.Sprite):
 
         self.speed = 3
 
-        self.down_image = down_image #pygame.image.load('Images/red_D.jpg')
-        self.left_image = left_image #pygame.image.load('Images/red_L.jpg')
-        self.right_image = right_image #pygame.image.load('Images/red_R.jpg')
-        self.up_image = up_image #pygame.image.load('Images/red_U.jpg')
+        self.down_image = down_image 
+        self.left_image = left_image 
+        self.right_image = right_image
+        self.up_image = up_image 
         self.edible_image = pygame.image.load('Images/Edible_Ghost.png')
 
         self.edible=False
@@ -37,8 +37,7 @@ class Ghost(pygame.sprite.Sprite):
         self.image = self.right_image
         self.width = 53
         self.height = 53
-        #self.rect = pygame.Rect(self.x, self.y, self.width, self.height) #original
-        self.rect = pygame.Rect(self.x-3, self.y-3, self.width+6, self.height+6)  #for wall collision
+        self.rect = pygame.Rect(self.x-3, self.y-3, self.width+6, self.height+6) 
 
     def make_edible(self):
         self.edible=True
