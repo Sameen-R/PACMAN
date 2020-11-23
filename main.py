@@ -308,6 +308,10 @@ def game():
                     elif ghost.orientation == 'D':
                         ghost.y += ghost.speed
                         ghost.rect.y += ghost.speed
+                        
+        '''
+        Pacman interaction with dots and ghosts (including switching to game over and game completion screens)
+        '''
 
         for dot in dots.copy():
             if pygame.sprite.collide_rect(player, dot):
