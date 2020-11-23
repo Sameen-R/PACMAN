@@ -6,7 +6,16 @@ class Player(pygame.sprite.Sprite):
         self.x = x
         self.y = y
         self.speed=3
-
+        '''
+                All images of the pacman are initialized here.
+                The L,R,D,U represent orientation of the pacman.
+                The 1,2,3,4 represent each represent a different pacman pose (how wide the mouth opens)
+                
+                So L1 means mouth slightly opening in the leftward direction
+                L2 means mouth closed in the leftward direction
+                L3 means mouth opening slightly in the leftward direction
+                L4 means mouth opening widely in the leftward direction
+                '''
         self.L1 = pygame.image.load('Images/L1.png')
         self.L2 = pygame.image.load('Images/L2.png')
         self.L3 = pygame.image.load('Images/L3.png')
@@ -39,8 +48,7 @@ class Player(pygame.sprite.Sprite):
         self.image = self.R1
         self.width = 53
         self.height = 53
-        #self.rect = pygame.Rect(self.x, self.y, self.width, self.height) #original
-        self.rect = pygame.Rect(self.x-3, self.y-3, self.width+6, self.height+6)  #for wall collision
+        self.rect = pygame.Rect(self.x-3, self.y-3, self.width+6, self.height+6)  
         self.counter = 0
 
     def draw(self):
@@ -80,11 +88,7 @@ class Player(pygame.sprite.Sprite):
                 self.image = self.L4
             elif self.orientation == 'R':
                 self.image = self.R4
-
-        #self.width = self.image.get_rect().width
-        #self.height = self.image.get_rect().height
-
-        #pygame.draw.rect(self.screen, (255,0,0), self.rect)
+                
         self.screen.blit(self.image, (self.x, self.y))
 
         self.counter+=1
